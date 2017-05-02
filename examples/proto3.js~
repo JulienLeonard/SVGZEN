@@ -1,0 +1,23 @@
+$(document).ready(function(){
+    svgrender();
+});
+
+function drawtitle(xcenter,g,child,cy) {
+    var childid    = child.id;
+    var childclass = child.classname;
+    
+    var c = document.createElementNS("http://www.w3.org/2000/svg",'circle');
+    var r = 200;
+    var ccy = cy + r;
+
+    c.setAttribute("id","c"+childid);
+    c.setAttribute("cx",xcenter);
+    c.setAttribute("cy",ccy);
+    c.setAttribute("r",r);
+    c.setAttribute("fill","white");
+    c.setAttribute("stroke","black");
+    c.setAttribute("stroke-width","10");
+    cy += r * 2;
+    g.appendChild(c);
+    return cy;
+}
